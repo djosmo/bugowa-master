@@ -44,7 +44,7 @@ class Post(models.Model):
                              self.publish.strftime('%m'),
                              self.publish.strftime('%d'),
                              self.publish.strftime('%M'),
-                             self.publish.second,
+                             self.publish.strftime('%S'),
                              self.slug])
 
 
