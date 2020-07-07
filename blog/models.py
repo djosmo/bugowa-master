@@ -43,7 +43,7 @@ class Post(models.Model):
                        args=[self.publish.year,
                              self.publish.strftime('%m'),
                              self.publish.strftime('%d'),
-                             self.publish.minute,
+                             self.publish.strftime('%M'),
                              self.publish.second,
                              self.slug])
 
