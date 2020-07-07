@@ -83,11 +83,11 @@ def post_suma(request):
 def new_post(request):
     """Dodaj nową kwotę."""
     if request.method != 'POST':
-        form = PostForm(request.POST)
+        form = PostForm()
     else:
         form = PostForm(request.POST)
         if form.is_valid():
-            new_post = form.save()
+            new_post = form.save(commit=False)
             new_post.author = request.user
             new_post.save()
             return HttpResponseRedirect(reverse('blog:post_list'))
