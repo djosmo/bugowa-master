@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block title %} Nowy rachunek {% endblock %} 
+
+{% block content %}
+
+  <form action="{% url 'blog:new_post' %}" method='post' class="form"> 
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+      <button name="submit" class="btn btn-primary btn-lg btn-block"><h3>Dodaj rachunek</h3></button>   
+    {% endbuttons %}
+  </form>
+
+{% endblock content %}
+

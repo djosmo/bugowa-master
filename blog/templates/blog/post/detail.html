@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+
+{% block title%}{{ post.title}}{% endblock %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  {{ post.body|linebreaks }}
+
+  <p class="date">
+    <small><i>Opublikowany {{ post.publish }} przez {{ post.author }}</small></i>
+  </p>
+  
+  <p>
+    <a href="{% url "blog:post_share" post.id %}">
+      Udostępnij post</a>
+  </p>
+  <p>
+    
+  </p>
+
+{% endblock %}

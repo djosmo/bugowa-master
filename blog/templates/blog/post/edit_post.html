@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{%  load bootstrap4 %}%}
+
+{% block title %}Edycja rachunku{% endblock %}
+
+{% block content %}
+
+  <p>
+    <h1>Edycja rachunku</h1>
+  </p>
+  
+
+  <form action="{% url 'blog:edit_post' post.id %}" method='post' class='form'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}    
+      <button name="submit" class="btn btn-primary"><p>Zapisz zmiany</p></button> 
+    {% endbuttons %}
+  </form>
+
+{% endblock content %}

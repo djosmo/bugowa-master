@@ -1,0 +1,1 @@
+Istnienie tego pliku gwarantuje, że katalog learning_log/static/ będzie dodany do projektu. Djano zbierze pliki statyczne, a następnie umieści je w katalogu blog/static/.

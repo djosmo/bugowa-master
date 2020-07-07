@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Budowa domu-ile kosztuje?{% endblock %}
+
+{% block content %}
+  <h1>Nasze wydatki:</h1>
+  {% for post in posts %}
+    <h2>
+      <a href="{{ post.get_absolute_url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    {{ post.body|truncatewords:1|linebreaks }}
+    <p class="date">
+    <small>
+      <p><i>Opublikowany {{ post.publish }} przez {{ post.author }}</i></p>
+    </small>  
+    </p>
+  
+    <!--  do poprawy:  Edytowany {{ post.updated }}  przez {{ user.username }}  -->  
+
+    
+  
+    <a href="{% url "blog:edit_post"  post.id %}"><p style="color:red;">Edytuj wpis</p></a>
+  
+    
+  {% empty %}
+  
+    <p>Nie ma jeszcze żadnych wydatków.</p>
+      
+  {% endfor %}
+
+  <a class="btn btn-primary btn-lg btn-block" href="{% url 'blog:new_post' %}" role="button">Dodaj nowy rachunek</a>
+
+  <p>{% include "pagination.html" with page=page_obj %}</p>
+  
+{% endblock %}
