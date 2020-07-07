@@ -85,7 +85,7 @@ def new_post(request):
     if request.method != 'POST':
         form = PostForm()
     else:
-        form = PostForm(request.POST)
+        form = PostForm(data=request.POST)
         if form.is_valid():
             form = form.save(commit=False)
             form.author = request.user
