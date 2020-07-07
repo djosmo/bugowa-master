@@ -167,7 +167,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 #Zezwolenie na wszystkie nagłówki hosta.
-ALLOWED_HOSTS =['obscure-thicket-69688.herokuapp.com']
+ALLOWED_HOSTS =['kosztabudowydomu.herokuapp.com']
 
 DEBUG = True
 #Konfiguracja zasobów statycznych.
