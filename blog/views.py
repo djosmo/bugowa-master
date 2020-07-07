@@ -87,9 +87,9 @@ def new_post(request):
     else:
         form = PostForm(request.POST)
         if form.is_valid():
-            new_post = form.save(commit=False)
-            new_post.author = request.user
-            new_post.save()
+            form = form.save(commit=False)
+            form.author = request.user
+            form.save()
             return HttpResponseRedirect(reverse('blog:post_list'))
     return render(request, 'blog/post/new_post.html', {'form' : form})
 
