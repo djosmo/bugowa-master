@@ -79,11 +79,11 @@ def post_suma(request):
         all += ob 
     return render(request, 'blog/suma.html', {'ob' : ob,
                                               'all' : all})     
-
+@login_required
 def new_post(request):
     """Dodaj nową kwotę."""
     if request.method != 'POST':
-        form = PostForm()
+        form = PostForm(request.POST)
     else:
         form = PostForm(request.POST)
         if form.is_valid():
