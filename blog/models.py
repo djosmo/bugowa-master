@@ -38,6 +38,6 @@ class Post(models.Model):
     def __float__(self):
         return self.title
 
-)
+
 
 
