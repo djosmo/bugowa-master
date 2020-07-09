@@ -6,7 +6,7 @@
   <h1>Nasze wydatki:</h1>
   {% for post in posts %}
     <h2>
-      <a href="{{ post.get_absolute_url }}">
+      <a href="{% url "blog:post_detail" post.id %}">
         {{ post.title }}
       </a>
     </h2>
